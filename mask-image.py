@@ -1,6 +1,6 @@
 import os
 from functools import reduce
-import wget
+# import wget
 import cv2
 import numpy as np
 from PIL import Image
@@ -33,9 +33,9 @@ os.makedirs(model_folder_path, exist_ok=True)
 
 model_path = os.path.join(model_folder_path, 'selfie_multiclass_256x256.tflite')
 model_url = 'https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_multiclass_256x256/float32/latest/selfie_multiclass_256x256.tflite'
-if not os.path.exists(model_path):
-    print(f"Downloading 'selfie_multiclass_256x256.tflite' model")
-    wget.download(model_url, model_path)
+# if not os.path.exists(model_path):
+#     print(f"Downloading 'selfie_multiclass_256x256.tflite' model")
+#     wget.download(model_url, model_path)
 
 options = ImageSegmenterOptions(base_options=BaseOptions(model_asset_path=model_path),
                                 running_mode=VisionRunningMode.IMAGE,
